@@ -2,7 +2,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SubarraywithSumK {
-     Map<Integer, Integer> prefixMap = new HashMap<>();
+
+    public static int subarray(int arr[],int k){
+        Map<Integer, Integer> prefixMap = new HashMap<>();
         int prefixSum = 0;
         int maxLength = 0;
         prefixMap.put(0, -1);
@@ -17,4 +19,5 @@ public class SubarraywithSumK {
             prefixMap.putIfAbsent(prefixSum, i);
         }
         return maxLength;
+    }
 }
