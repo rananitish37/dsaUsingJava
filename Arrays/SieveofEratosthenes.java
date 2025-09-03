@@ -1,0 +1,37 @@
+public class SieveofEratosthenes {
+    
+    public int[] sieve(int n) {
+        // code here
+        boolean[] prime = new boolean[n+1];
+        
+        for(int i=0; i<n+1; i++){
+            prime[i]=true;
+        }
+        
+        for(int p=2; p*p<=n ; p++){
+            if(prime[p]){
+                for(int i=p*p; i<=n; i +=p){
+                    prime[i]=false;
+                }
+            }
+        }
+        
+        int count=0;
+        for(int i=2; i<=n; i++){
+            if(prime[i]){
+                count++;
+            }
+        }
+        
+        int ans[] = new int[count];
+        int t=0;
+        for(int i=2;i<=n; i++){
+            if(prime[i]){
+                ans[t++]=i;
+            }
+        }
+        return ans;
+        
+    }
+
+}
