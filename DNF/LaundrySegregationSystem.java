@@ -3,15 +3,16 @@ public class LaundrySegregationSystem {
         int clothes[] = {2, 0, 2, 1, 1, 0};
 
         int start=0,mid=0,end=clothes.length-1;
-        while(mid<end){
+        while(mid<=end){
             if(clothes[mid] == 0){
                 swap(start, mid,clothes);
                 start++;
                 mid++;
             }else if(clothes[mid] == 2){
                 swap(mid, end, clothes);
-                mid++;
                 end--;
+            }else{
+                mid++;
             }
         }
         for(int x: clothes){
