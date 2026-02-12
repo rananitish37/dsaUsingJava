@@ -1,3 +1,4 @@
+package TwoPointer;
 public class ZeroImpactEventCleanup {
     public static void main(String[] args) {
         int events[] = {1, 0, 3, 0, 5};
