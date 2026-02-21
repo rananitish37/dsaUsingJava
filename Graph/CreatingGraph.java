@@ -69,9 +69,13 @@ public class CreatingGraph {
         // store the edges connected at 4:
         graph[4].add(new Edge(4, 2, 2));
 
+        /* 
         System.out.print("Neigbour of "+graph[1].get(1).src+" is ");
         for(int i=0; i<graph[1].size(); i++){
             System.out.print(graph[1].get(i).dest+" ");
         }
+            */
+
+        BFS.BfsTraversal(graph);
     }
 }

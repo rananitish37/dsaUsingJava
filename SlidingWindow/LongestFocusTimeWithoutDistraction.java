@@ -1,3 +1,4 @@
+package SlidingWindow;
 public class LongestFocusTimeWithoutDistraction {
     public static void main(String[] args) {
         char states[] = {'F', 'D', 'F', 'D', 'F', 'F', 'D', 'F'};
