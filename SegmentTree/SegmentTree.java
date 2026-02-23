@@ -12,8 +12,8 @@ public class SegmentTree {
 
         int mid = (start+end)/2;
 
-        int l = build(arr, 2*start+1, start, mid);
-        int r = build(arr, 2*start+2, mid+1, end);
+        int l = build(arr, 2*sti+1, start, mid);
+        int r = build(arr, 2*sti+2, mid+1, end);
         // tree[sti] = l+r;
         tree[sti]  = tree[2*sti+1]+tree[2*sti+2]; 
         return tree[sti];
@@ -28,8 +28,8 @@ public class SegmentTree {
 
         build(arr, 0, 0,n-1);
 
-        for (int i : tree) {
-            System.out.print(i+" ");
+        for (int i=0; i<tree.length; i++) {
+            System.out.print(tree[i]+" ");
         }
     }
 }
