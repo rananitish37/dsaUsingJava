@@ -4,6 +4,7 @@ public class Repeatations {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String input = sc.next();
+        
 
         int maxCount=1;
         int currCount=1;
