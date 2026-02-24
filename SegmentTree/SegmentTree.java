@@ -22,20 +22,21 @@ public class SegmentTree {
     }
     public static int getSum(int idx, int si, int sj, int qi, int qj){
 
-        if(qj <= si || qi >= sj){ //non overlapping
+        if(qj < si || qi > sj){ //non overlapping
             return 0;
         }else if(si >= qi && sj <= qj){//total overlapping
             return tree[idx];
         }else{ //partial overlapping
             int mid = (si + sj)/2;
-            int left = getSum(idx*2+1, si, mid, qi, qj);
-            int right = getSum(idx*2+2, mid+1, sj, qi, qj);
+            int left = getSum(2*idx+1, si, mid, qi, qj);
+            int right = getSum(2*idx+2, mid+1, sj, qi, qj);
             return left+right;
         }
     }
 
     public static int segmentQuery(int []arr, int qi, int qj){
-        return getSum(0, 0, arr.length-1, qi, qj);
+        int n=arr.length;
+        return getSum(0, 0, n-1, qi, qj);
 
     }
     public static void main(String[] args) {
@@ -50,7 +51,7 @@ public class SegmentTree {
         //     System.out.print(tree[i]+" ");
         // }
 
-        System.out.print(segmentQuery(arr, 2, 4));
+        System.out.print(segmentQuery(arr, 2, 6));
        
     }
 }
