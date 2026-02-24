@@ -39,6 +39,25 @@ public class SegmentTree {
         return getSum(0, 0, n-1, qi, qj);
 
     }
+    public static void update(int i, int si, int sj, int idx, int diff){
+        if(idx > sj || idx < si){
+            return;
+        }
+
+        tree[i] += diff;
+        if(si != sj){ //non-leaf
+            int mid = (si+sj)/2;
+            update(2*i+1, si, mid, idx, diff);
+            update(2*i+2, mid+1, sj, idx, diff);
+        }
+    }
+
+    public static void updateSegment(int arr[], int idx, int val){
+        int diff = val-arr[idx];
+        int n=arr.length;
+        arr[idx] = val;
+        update(0,0,n-1,idx, diff);
+    }
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5,6,7,8};
         int n= arr.length;
@@ -47,11 +66,19 @@ public class SegmentTree {
 
         build(arr, 0, 0,n-1);
 
-        // for (int i=0; i<tree.length; i++) {
-        //     System.out.print(tree[i]+" ");
-        // }
+        for (int i=0; i<tree.length; i++) {
+            System.out.print(tree[i]+" ");
+        }
 
-        System.out.print(segmentQuery(arr, 2, 6));
+        // System.out.print(segmentQuery(arr, 2, 6));
+
+
+        updateSegment(arr, 2,2);
+
+        System.out.println();
+        for (int i=0; i<tree.length; i++) {
+            System.out.print(tree[i]+" ");
+        }
        
     }
 }
