@@ -70,7 +70,7 @@ public class SegmentTree {
             System.out.print(tree[i]+" ");
         }
 
-        // System.out.print(segmentQuery(arr, 2, 6));
+        System.out.println(segmentQuery(arr, 2, 6));
 
 
         updateSegment(arr, 2,2);
@@ -79,6 +79,7 @@ public class SegmentTree {
         for (int i=0; i<tree.length; i++) {
             System.out.print(tree[i]+" ");
         }
-       
+        
+        System.out.println(segmentQuery(arr, 2, 6));
     }
 }

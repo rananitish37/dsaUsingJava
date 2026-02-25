@@ -77,5 +77,7 @@ public class CreatingGraph {
             */
 
         BFS.BfsTraversal(graph);
+        boolean []vis = new boolean[V];
+        DFS.DfsTraversal(graph, 0, vis);
     }
 }
