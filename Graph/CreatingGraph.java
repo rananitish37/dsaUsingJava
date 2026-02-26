@@ -78,6 +78,8 @@ public class CreatingGraph {
 
         BFS.BfsTraversal(graph);
         boolean []vis = new boolean[V];
-        DFS.DfsTraversal(graph, 0, vis);
+        // DFS.DfsTraversal(graph, 0, vis);
+        System.out.println(HasPath.hasPath(graph, 1, 4, new boolean[V]));
+        
     }
 }
