@@ -1,6 +1,18 @@
 # dsaUsingJava
 Trying to solve as much as DSA question I can
 
+# the steps need to be keep in mind while solving sliding window
+1) Define tail, head
+2) Define DS inside window
+3) Maintain answer
+4) For every start!
+5) Eat as many as possible while valid
+6) Add in DS while expanding
+7) Update answer
+8) Move start / Reset case
+9) Shrink + Remove from DS
+10) TReture answer!
+
 ## Weird Algorithm
 Time limit: 1.00 s
 Memory limit: 512 MB
