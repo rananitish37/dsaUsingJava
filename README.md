@@ -70,3 +70,6 @@ ATTCGGGA
 
 Output:
 3
+
+
+same thing for bsf
