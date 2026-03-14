@@ -39,7 +39,7 @@ public class DetectCycle {
     private static boolean cycleExist(ArrayList<Edge>[] graph) {
         boolean visited[] = new boolean[graph.length];
         for(int i=0; i<graph.length; i++){
-            if(visited[i]){
+            if(!visited[i]){
                 if(cycleExistUtil(graph, visited, 1, -1)){
                     return true;
                 }
@@ -53,7 +53,7 @@ public class DetectCycle {
         for (int i = 0; i < graph[curr].size(); i++) {
             Edge e = graph[curr].get(i);
 
-            if(visited[e.dest] && cycleExistUtil(graph, visited, e.dest, curr)){
+            if(!visited[e.dest] && cycleExistUtil(graph, visited, e.dest, curr)){
                 return true;
             } else if(visited[e.dest] && e.dest != parent){
                 return true;
