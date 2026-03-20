@@ -43,6 +43,8 @@ public class CycleDetectionInUndirected {
         graph[3].add(new Edge(3, 4));
         graph[4].add(new Edge(4, 3));
 
+
+        System.out.println(cycle(graph));
     }
 
     public static boolean cycle(ArrayList<Edge>[] graph) {
@@ -56,6 +58,7 @@ public class CycleDetectionInUndirected {
                 }
             }
         }
+        return false;
     }
 
     private static boolean isCycleUtil(ArrayList<Edge>[] graph, int curr, boolean[] vis, boolean[] stack) {
@@ -65,9 +68,14 @@ public class CycleDetectionInUndirected {
             for(int i=0; i< graph[curr].size(); i++){
                 Edge e = graph[curr].get(i);
                 if(stack[e.dest]){
-
+                    return true;
                 }
-
+                if(!vis[e.dest] && isCycleUtil(graph, e.dest, vis, stack)){
+                    return true;
+                }
             }
+
+            stack[curr] = false;
+            return false;
     }
 }
