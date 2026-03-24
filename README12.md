@@ -3,6 +3,7 @@ Difficulty: Medium
 Reveal Path  
 A school keeps attendance in a circular order so each student periodically appears first. At the end of each month, the teacher announces that the visible register should now begin K seats later than before. K may be bigger than the number of students. The circular order itself is unchanged; only the flattened representation begins somewhere else. The most direct solution comes from reasoning about how indices move under wrap-around.  
 
+Ans: 
 ---
 
 ### The Coach's Best Chapter
@@ -10,6 +11,7 @@ Difficulty: Hard
 Reveal Path  
 A coach rates every training day with a positive or negative morale score. To produce a season documentary, she wants one uninterrupted chapter that captures the strongest overall rise in morale. It cannot skip bad days in the middle if those days lie inside the chosen chapter, and it cannot splice disconnected weeks together. The trick is recognizing when carrying earlier disappointment into the future is harmful enough that a new chapter should start at the current day. The language is narrative and psychological, but the algorithmic core is a best contiguous total.  
 
+Ans:
 ---
 
 ### Every Center in the Poet's Mirror
@@ -45,6 +47,7 @@ Difficulty: Hard
 Reveal Path  
 A port authority receives containers tagged for three handling levels: hand-carry, forklift, and crane. The line controller must rearrange them so all hand-carry containers come first, then forklift, then crane. The memory available to the controller is tiny, and management explicitly says the relative order inside a category is irrelevant. Each container already belongs to one of exactly three categories, so the problem is much more specialized than generic sorting. However, the wording tries to bait students into thinking of custom comparator sort or counting sort simply because categories are involved. The real structure is an in-place region-building process in which one pointer explores while two other boundaries mark settled zones.  
 
+Ans: DNF
 ---
 
 ### Review the Apprentices' Code, Not the Story
